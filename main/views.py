@@ -8,8 +8,14 @@ from .models import Profile
 # Create your views here
 
 def home(request):
-    p = Profile.objects.all()
+    u = User.objects.get(username='toshiba')
+    p = Profile.objects.get(acc=u)
     return render(request, 'main/index.html', {'p': p})
+
+
+def profiles(request):
+    p = Profile.objects.all()
+    return render(request, 'main/user_list.html', {'p': p})
 
 
 def createacct(request):

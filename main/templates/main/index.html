@@ -53,12 +53,12 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li><a href="" class="active">Home</a></li>
+          <li><a href="{% url 'profile_detail' p.pk %}">About</a></li>
+          <li class="dropdown"><a href="#"><span>Explore</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="gallery.html">Nature</a></li>
-              <li><a href="gallery.html">People</a></li>
+              <li><a href="{% url 'users' %}">People</a></li>
               <li><a href="gallery.html">Architecture</a></li>
               <li><a href="gallery.html">Animals</a></li>
               <li><a href="gallery.html">Sports</a></li>
@@ -94,9 +94,9 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-6 text-center">
-          <h2>I'm <span>{{im.get_name}}</span> a Professional Photographer from {{im.location}}</h2>
+          <h2>I'm <span>Ogu Ifeanyi</span> A web Development Student Located At Owerri, Imo state Nigeria </h2>
           <p>{{im.bio}}</p>
-          <a href="contact.html" class="btn-get-started">Available for hire</a>
+          <a href="{% url 'profile_detail' p.pk %}" class="btn-get-started">VIEW MY PROFILE</a>
         </div>
       </div>
     </div>
