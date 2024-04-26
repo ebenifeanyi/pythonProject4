@@ -1,0 +1,4 @@
+{% for i in im %}
+<div><a href="{% url 'profile_detail' i.pk  %}">{{i.username}}</a></div>
+{% endfor %}
+
