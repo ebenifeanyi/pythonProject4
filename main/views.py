@@ -48,12 +48,13 @@ def profile_create(request):
 
 def profile_detail(request, pk):
     p = Profile.objects.get(pk=pk)
-    return render(request, 'main/index.html', {'im': p})
+    return render(request, 'main/pro.html', {'im': p})
 
 
 def add_friend(request, pk):
     p = Profile.objects.get(pk=pk)
     u = request.user
+
     p.friends.add(u)
     p.save()
     return redirect('home')
