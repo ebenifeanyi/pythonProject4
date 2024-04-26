@@ -72,8 +72,8 @@
               </li>
             </ul>
           </li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li>{% if user.is_authenticated %}{% if not user.profile %}<a href="{% url 'profile' %}">Create Profile</a>{%else%}<a href="{% url 'profile_detail' user.pk  %}">View Profile</a>{% endif %}{%else%}<a href="{% url 'login' %}">Login</a>{% endif %}</li>
+         {% if user.is_authenticated %}<li><a href="{% url 'logout' %}">Logout</a></li>{% endif %}
         </ul>
       </nav><!-- .navbar -->
 
