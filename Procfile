@@ -1,0 +1,1 @@
+web: gunicorn pshow.wsgi --log-file -
